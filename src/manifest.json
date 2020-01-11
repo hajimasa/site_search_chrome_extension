@@ -3,10 +3,18 @@
   "description": "複数の技術サイトから横断して調べたい事柄が調べられます。",
   "version": "0.1",
   "manifest_version": 2,
-  "content_scripts": [{
-    "matches": ["https://github.com/waterada/chrome-ex-template/*"],
-    "js": ["jquery-2.2.0.min.js", "ChEx.js", "content_script.js"]
-  }],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://github.com/waterada/chrome-ex-template/*"
+      ],
+      "js": [
+        "jquery-2.2.0.min.js",
+        "ChEx.js",
+        "content_script.js"
+      ]
+    }
+  ],
   "options_page": "options.html",
   "permissions": [
     "https://github.com/waterada/chrome-ex-template/*",

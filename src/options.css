@@ -1,0 +1,6 @@
+.grid-area {
+  display: grid;
+  height: 100vh;                /* grid全体の高さを設定 */
+  grid-template-rows: 100%;  /* gridの割合が8:2になるよう2行用意 */
+  grid-template-columns: 1fr 1fr 1fr;  /* 横幅いっぱいに1列用意 */
+}
