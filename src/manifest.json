@@ -1,6 +1,6 @@
 {
-  "name": "Chrome拡張の雛形です",
-  "description": "これから作るものにあわせて変更してください。",
+  "name": "技術サイト横断検索",
+  "description": "複数の技術サイトから横断して調べたい事柄が調べられます。",
   "version": "0.1",
   "manifest_version": 2,
   "content_scripts": [{
