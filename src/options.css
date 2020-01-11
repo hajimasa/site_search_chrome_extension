@@ -4,3 +4,8 @@
   grid-template-rows: 100%;  /* gridの割合が8:2になるよう2行用意 */
   grid-template-columns: 1fr 1fr 1fr;  /* 横幅いっぱいに1列用意 */
 }
+
+html {
+  background-color: red;
+  font-family: 'Press Start 2P', cursive;
+} 
