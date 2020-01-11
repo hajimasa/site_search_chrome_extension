@@ -5,7 +5,12 @@
   grid-template-columns: 1fr 1fr 1fr;  /* 横幅いっぱいに1列用意 */
 }
 
+@font-face {
+	font-family: '8bit';
+	src: url(./PixelMplus10-Regular.ttf);
+}
+
 html {
   background-color: red;
-  font-family: 'Press Start 2P', cursive;
+  font-family: '8bit', cursive;
 } 
