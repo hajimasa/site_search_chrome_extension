@@ -1,5 +1,12 @@
 ﻿//----------------------
 $(function () {
+  document.onkeypress = enter;
+  function enter(){
+    if( window.event.keyCode == 13 ){
+      $('#execute').click()
+      return false;
+    }
+  }
 
   $('#execute').click(function () {
 
