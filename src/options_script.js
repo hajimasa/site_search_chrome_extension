@@ -73,9 +73,10 @@ $(function () {
         })
         .then(resJson => {
           
-          for (var i = 0, len = Object.keys(resJson).length; i < len; ++i) {
-            var link = '<a href="' + resJson[i].url + '">' + resJson[i].name + '</a><br>';
-            document.getElementById('pornhub').innerHTML += link;
+          for (var i = 4, len = Object.keys(resJson).length; i < len; ++i) {
+            var video = '<iframe src="https://jp.pornhub.com/embed/' + resJson[i].url.substr(43) +'" frameborder="10" width="250" height="180" scrolling="no" allowfullscreen></iframe><br><br>'
+            document.getElementById('pornhub').innerHTML += video;
+            if(i==8) break;
           };
   
         })
