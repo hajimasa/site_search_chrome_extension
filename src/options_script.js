@@ -5,6 +5,8 @@ $(function () {
 
     document.getElementById('qiita').innerHTML = "";
     document.getElementById('stack_over_flow').innerHTML = "";
+    document.getElementById('pornhub').innerHTML = "";
+
 
     var keyword = document.getElementById('query').value;
 
@@ -14,7 +16,6 @@ $(function () {
       method: "GET"
     })
       .then(response => {
-
         if (response.ok) {
           return response.json();
         }
@@ -46,7 +47,6 @@ $(function () {
         throw new Error('Network response was not ok.');
       })
       .then(resJson => {
-
         var content;
         for (var i = 0, len = resJson.items.length; i < len; ++i) {
           var link = '<a href="' + resJson.items[i].link + '">' + resJson.items[i].title + '</a><br>';
@@ -59,5 +59,30 @@ $(function () {
         // ネットワークエラーの場合はここに到達する
         console.error(error);
       })
+
+      fetch('https://site-search-chrome-api.herokuapp.com/pornhub'  , {
+        method: "POST",
+        body: JSON.stringify(keyword)
+      })
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          }
+          // 404 や 500 ステータスならここに到達する
+          throw new Error('Network response was not ok.');
+        })
+        .then(resJson => {
+          
+          for (var i = 0, len = Object.keys(resJson).length; i < len; ++i) {
+            var link = '<a href="' + resJson[i].url + '">' + resJson[i].name + '</a><br>';
+            document.getElementById('pornhub').innerHTML += link;
+          };
+  
+        })
+        .catch(error => {
+          // ネットワークエラーの場合はここに到達する
+          console.error(error);
+        })
+
   });
 });
